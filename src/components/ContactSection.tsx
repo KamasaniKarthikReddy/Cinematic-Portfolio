@@ -133,7 +133,7 @@ export const ContactSection: React.FC = () => {
   return (
     <footer
       id="contact"
-      className="relative w-full bg-[#050505] text-[#E8DFD8] font-sans selection:bg-[#D4AF37] selection:text-black pt-24 pb-14 px-6 sm:px-12 lg:px-20 overflow-hidden border-t border-[#8C6D4F]/20"
+      className="relative w-full max-w-full bg-[#050505] text-[#E8DFD8] font-sans selection:bg-[#D4AF37] selection:text-black pt-16 sm:pt-24 pb-14 px-5 sm:px-12 lg:px-20 overflow-hidden border-t border-[#8C6D4F]/20"
     >
       {/* ================= AMBIENT BACKGROUND GLOWS ================= */}
       <motion.div
@@ -188,7 +188,7 @@ export const ContactSection: React.FC = () => {
               {/* Main Heading */}
               <motion.div variants={fadeUpVariants} className="mb-6 select-none">
                 <h2
-                  className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.2rem] tracking-tight uppercase leading-[0.88]"
+                  className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.2rem] tracking-tight uppercase leading-[0.9] sm:leading-[0.88]"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
                   <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#E8DFD8] to-[#8A7D71] drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)]">

@@ -113,7 +113,7 @@ export const ProjectsSection: React.FC = () => {
   return (
     <section
       id="work"
-      className="relative w-full bg-black text-[#E8DFD8] font-sans selection:bg-[#cbb59d] selection:text-black pt-8 pb-32 px-6 sm:px-12 lg:px-20"
+      className="relative w-full max-w-full bg-black text-[#E8DFD8] font-sans selection:bg-[#cbb59d] selection:text-black pt-8 pb-24 sm:pb-32 px-5 sm:px-12 lg:px-20 overflow-hidden"
     >
       {/* Studio Ambient Glows */}
       <div className="absolute top-1/4 left-1/3 w-[36rem] h-[36rem] bg-[#D4AF37]/5 rounded-full blur-[180px] pointer-events-none" />
@@ -144,10 +144,10 @@ export const ProjectsSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col md:flex-row md:items-end justify-between mb-16"
+          className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16"
         >
           <h2
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight uppercase leading-[0.85] select-none"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight uppercase leading-[0.9] sm:leading-[0.85] select-none"
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}
           >
             <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#D5CBC0] to-[#605448] drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
@@ -167,19 +167,18 @@ export const ProjectsSection: React.FC = () => {
         </motion.div>
 
         {/* React Bits Stacking Deck */}
-        {/* React Bits Stacking Deck */}
-<ScrollStack
-  itemDistance={20}
-  itemScale={0.035}
-  itemStackDistance={28}
-  stackPosition="15%"
-  scaleEndPosition="6%"
-  baseScale={0.88}
-  useWindowScroll={true}
->
+        <ScrollStack
+          itemDistance={20}
+          itemScale={0.035}
+          itemStackDistance={28}
+          stackPosition="12%"
+          scaleEndPosition="6%"
+          baseScale={0.88}
+          useWindowScroll={true}
+        >
           {projects.map((project) => (
             <ScrollStackItem key={project.title}>
-              <div className="relative w-full rounded-2xl border border-[#8C6D4F]/50 bg-[#0E0C0A] p-8 sm:p-12 shadow-[0_25px_70px_rgba(0,0,0,0.98)] group overflow-hidden transition-colors duration-500 hover:border-[#D4AF37]">
+              <div className="relative w-full rounded-2xl border border-[#8C6D4F]/50 bg-[#0E0C0A] p-5 sm:p-8 lg:p-12 shadow-[0_25px_70px_rgba(0,0,0,0.98)] group overflow-hidden transition-colors duration-500 hover:border-[#D4AF37]">
                 
                 {/* Top Gold Border Light Flare */}
                 <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/80 to-transparent" />
@@ -192,29 +191,29 @@ export const ProjectsSection: React.FC = () => {
 
                 {/* Big Background Watermark Number */}
                 <span
-                  className="absolute -bottom-6 -right-3 text-8xl sm:text-9xl font-bold text-[#EAD8C7]/5 select-none pointer-events-none leading-none"
+                  className="absolute -bottom-6 -right-3 text-7xl sm:text-9xl font-bold text-[#EAD8C7]/5 select-none pointer-events-none leading-none"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
                   {project.number}
                 </span>
 
                 {/* Content Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start relative z-10">
                   
                   {/* Left Column (7 Cols) */}
                   <div className="lg:col-span-7 flex flex-col justify-between">
                     <div>
-                      <div className="flex items-center space-x-3 mb-4">
+                      <div className="flex items-center space-x-3 mb-3 sm:mb-4">
                         <span className="text-xs font-mono font-bold text-[#D4AF37]">
                           {project.number} //
                         </span>
-                        <span className="text-[10.5px] font-mono tracking-[0.25em] uppercase text-[#A8988B]">
+                        <span className="text-[10px] sm:text-[10.5px] font-mono tracking-[0.2em] sm:tracking-[0.25em] uppercase text-[#A8988B]">
                           {project.category}
                         </span>
                       </div>
 
                       <h3
-                        className="text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-white mb-4 group-hover:text-[#F7E7C4] transition-colors uppercase leading-[0.9]"
+                        className="text-3xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-white mb-3 sm:mb-4 group-hover:text-[#F7E7C4] transition-colors uppercase leading-[0.9]"
                         style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                       >
                         {project.title}

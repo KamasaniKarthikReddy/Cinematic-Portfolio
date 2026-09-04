@@ -69,7 +69,7 @@ export const AboutSection: React.FC = () => {
   return (
     <section 
       id="about" 
-      className="relative w-screen min-h-screen bg-black text-[#E8DFD8] font-sans selection:bg-[#cbb59d] selection:text-black py-24 lg:py-32 px-6 sm:px-12 lg:px-20 overflow-hidden flex items-center"
+      className="relative w-full max-w-full min-h-screen bg-black text-[#E8DFD8] font-sans selection:bg-[#cbb59d] selection:text-black py-16 sm:py-24 lg:py-32 px-5 sm:px-12 lg:px-20 overflow-hidden flex items-center"
     >
       {/* ================= BACKGROUND GLOWS & FLOATING PARTICLES ================= */}
       <motion.div 
@@ -91,7 +91,7 @@ export const AboutSection: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="flex items-center space-x-4 mb-10"
+          className="flex items-center space-x-4 mb-8 sm:mb-10"
         >
           <span 
             className="text-[11px] font-medium tracking-[0.35em] uppercase text-[#D4AF37]"
@@ -103,7 +103,7 @@ export const AboutSection: React.FC = () => {
         </motion.div>
 
         {/* Main Grid: Content + Portrait */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           
           {/* ================= LEFT CONTENT (7 COLS) ================= */}
           <motion.div
@@ -116,7 +116,7 @@ export const AboutSection: React.FC = () => {
             {/* Cinematic Headline with Glow Flare */}
             <motion.div variants={fadeUpVariants} className="relative mb-6 select-none">
               <h2
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.4rem] tracking-tight uppercase leading-[0.88]"
+                className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.4rem] tracking-tight uppercase leading-[0.9] sm:leading-[0.88]"
                 style={{ fontFamily: "'Bebas Neue', sans-serif" }}
               >
                 <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#D5CBC0] to-[#605448] drop-shadow-[0_4px_10px_rgba(0,0,0,0.85)]">
