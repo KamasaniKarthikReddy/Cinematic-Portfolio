@@ -3,7 +3,6 @@ import type React from 'react';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import watermarkImg from '../assets/watermark.png';
-import heroImg from '../assets/hero.png';
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -98,26 +97,23 @@ export const HeroSection: React.FC = () => {
           loop
           playsInline
           preload="auto"
-          poster={heroImg}
-          className="w-full h-full object-cover object-[70%_center] opacity-60 sm:opacity-75 md:opacity-100 md:w-auto md:h-screen md:max-w-none md:object-contain md:origin-right md:scale-95 lg:scale-100 transition-opacity duration-700"
+          className="w-full h-full object-cover object-center opacity-65 sm:opacity-80 md:opacity-100 md:w-auto md:h-screen md:max-w-none md:object-contain md:origin-right md:scale-95 lg:scale-100 transition-opacity duration-700"
         >
           <source src="/videos/hero.mp4" type="video/mp4" />
           <source src="/videos/hero_202608180949_202608181022.mp4" type="video/mp4" />
         </video>
 
-        {/* Mobile: Full subtle vignette overlay ensuring text sharpness & readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/45 to-black md:hidden pointer-events-none" />
+        {/* Mobile: Smooth vignette overlay so the centered subject is clearly visible while text is crisp */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/35 to-black/90 md:hidden pointer-events-none" />
 
         {/* Desktop: Seamless Soft Left Edge Blend */}
         <div className="hidden md:block absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-black via-black/85 to-transparent pointer-events-none" />
 
-        {/* ================= 3. ANIMATED WATERMARK EMBLEM ================= */}
-        <div className="absolute bottom-4 right-4 sm:bottom-10 sm:right-10 lg:bottom-16 lg:right-20 pointer-events-none flex items-center justify-center z-10">
+        {/* ================= 3. ANIMATED WATERMARK EMBLEM (DESKTOP / TABLET ONLY) ================= */}
+        <div className="hidden sm:flex absolute bottom-10 right-10 lg:bottom-16 lg:right-20 pointer-events-none items-center justify-center z-10">
           <div className="relative flex items-center justify-center">
-            {/* Multi-layered dark occluding mask properly sized for desktop and mobile */}
-            <div className="hidden sm:block absolute w-52 h-52 sm:w-60 sm:h-60 bg-black/95 rounded-full blur-2xl pointer-events-none" />
-            <div className="hidden sm:block absolute w-36 h-36 sm:w-40 sm:h-40 bg-black rounded-full blur-md pointer-events-none" />
-            <div className="sm:hidden absolute w-24 h-24 bg-black/80 rounded-full blur-lg pointer-events-none" />
+            <div className="absolute w-52 h-52 sm:w-60 sm:h-60 bg-black/95 rounded-full blur-2xl pointer-events-none" />
+            <div className="absolute w-36 h-36 sm:w-40 sm:h-40 bg-black rounded-full blur-md pointer-events-none" />
 
             <motion.div
               animate={{
@@ -134,7 +130,7 @@ export const HeroSection: React.FC = () => {
               <img
                 src={watermarkImg}
                 alt="Insignia"
-                className="w-16 h-16 sm:w-32 sm:h-32 lg:w-40 lg:h-40 object-contain drop-shadow-[0_0_20px_rgba(212,175,55,0.35)] opacity-75 sm:opacity-100"
+                className="w-32 h-32 lg:w-40 lg:h-40 object-contain drop-shadow-[0_0_20px_rgba(212,175,55,0.35)]"
               />
             </motion.div>
           </div>
