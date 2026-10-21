@@ -145,7 +145,7 @@ export const AboutSection: React.FC = () => {
               {/* Stat 1 */}
               <div className="flex flex-col">
                 <span 
-                  className="text-3xl sm:text-4xl font-light text-[#F4EBE2] tracking-tight"
+                  className="text-3xl sm:text-4xl font-light text-[#D4AF37] tracking-tight"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
                   700+
@@ -171,7 +171,7 @@ export const AboutSection: React.FC = () => {
               {/* Stat 3 */}
               <div className="flex flex-col">
                 <span 
-                  className="text-3xl sm:text-4xl font-light text-[#F4EBE2] tracking-tight"
+                  className="text-3xl sm:text-4xl font-light text-[#D4AF37] tracking-tight"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
                   5+
