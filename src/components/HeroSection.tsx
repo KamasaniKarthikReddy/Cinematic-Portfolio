@@ -262,24 +262,6 @@ export const HeroSection: React.FC = () => {
                   ↗
                 </span>
               </motion.a>
-
-              {/* Scroll To Explore */}
-              <motion.a
-                href="#about"
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-                whileHover={{ scale: 1.02 }}
-                className="relative inline-flex items-center justify-center space-x-2 px-6 sm:px-7 py-3 sm:py-3.5 border border-[#8C6D4F]/40 hover:border-[#D4AF37] text-[#BFA895] hover:text-[#D4AF37] text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 text-center group"
-              >
-                <span>SCROLL TO EXPLORE</span>
-                <motion.span
-                  animate={{ y: [0, 4, 0] }}
-                  transition={{ repeat: Infinity, duration: 1.4, ease: 'easeInOut' }}
-                  className="text-xs"
-                >
-                  ↓
-                </motion.span>
-              </motion.a>
             </motion.div>
           </motion.div>
 
@@ -323,26 +305,36 @@ export const HeroSection: React.FC = () => {
         {/* Bottom Spacer */}
         <div className="h-2" />
 
-        {/* Bottom-Corner Scroll Indicator */}
+        {/* Bottom-LEFT Corner Scroll Indicator */}
         <motion.a
           href="#about"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20 cursor-pointer group pointer-events-auto"
+          className="absolute bottom-10 left-5 sm:left-8 flex flex-row items-center gap-3 z-20 cursor-pointer group pointer-events-auto"
           style={{ fontFamily: "'Montserrat', sans-serif" }}
         >
-          <span className="text-[9px] font-medium tracking-[0.35em] uppercase text-[#8C6D4F] group-hover:text-[#D4AF37] transition-colors duration-300">
-            SCROLL TO EXPLORE
-          </span>
+          {/* Vertical line */}
           <motion.div
-            animate={{ y: [0, 6, 0] }}
+            animate={{ scaleY: [1, 1.15, 1] }}
             transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
-            className="flex flex-col items-center gap-[3px]"
-          >
-            <div className="w-[1px] h-6 bg-gradient-to-b from-[#D4AF37]/80 to-transparent" />
-            <span className="text-[#D4AF37] text-xs">↓</span>
-          </motion.div>
+            className="w-[1px] h-10 bg-gradient-to-b from-transparent via-[#D4AF37]/70 to-[#D4AF37] origin-bottom"
+          />
+          {/* Rotated label */}
+          <div className="flex flex-col items-start gap-1">
+            <span
+              className="text-[8.5px] font-medium tracking-[0.38em] uppercase text-[#8C6D4F] group-hover:text-[#D4AF37] transition-colors duration-300"
+            >
+              SCROLL TO EXPLORE
+            </span>
+            <motion.span
+              animate={{ y: [0, 4, 0] }}
+              transition={{ repeat: Infinity, duration: 1.4, ease: 'easeInOut' }}
+              className="text-[#D4AF37] text-xs"
+            >
+              ↓
+            </motion.span>
+          </div>
         </motion.a>
       </div>
     </section>
