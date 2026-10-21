@@ -61,7 +61,23 @@ export const ContactSection: React.FC = () => {
 
     let isSuccess = false;
 
-    // 1. Try EmailJS first if environment variables are configured
+    // 0. Persist inquiry into MySQL Database via Backend API
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+    try {
+      const dbResponse = await fetch(`${apiUrl}/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (dbResponse.ok) {
+        console.log('✅ Transmission successfully logged to MySQL database.');
+        isSuccess = true;
+      }
+    } catch (backendErr) {
+      console.warn('Backend API currently unreachable, falling back to direct notification...', backendErr);
+    }
+
+    // 1. Try EmailJS next if configured
     if (isEmailJSConfigured) {
       try {
         await emailjs.send(
