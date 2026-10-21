@@ -267,15 +267,15 @@ export const HeroSection: React.FC = () => {
 
               {/* Explore My Work CTA — NOW SECOND */}
               <motion.a
-                href="#work"
+                href="#about"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
                 className="relative inline-flex items-center justify-center space-x-3 px-6 sm:px-7 py-3 sm:py-3.5 border border-[#8C6D4F]/40 hover:border-[#8C6D4F] text-[#BFA895] hover:text-[#EAD8C7] text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 text-center"
               >
-                <span>EXPLORE MY WORK</span>
-                <span className="transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-xs">
-                  ↗
+                <span>SCROLL TO EXPLORE</span>
+                <span className="transform transition-transform duration-300 group-hover:translate-y-0.5 text-xs">
+                  ↓
                 </span>
               </motion.a>
             </motion.div>
