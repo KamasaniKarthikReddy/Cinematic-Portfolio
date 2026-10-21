@@ -271,10 +271,11 @@ export const HeroSection: React.FC = () => {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
-                className="relative inline-flex items-center justify-center space-x-3 px-6 sm:px-7 py-3 sm:py-3.5 border border-[#8C6D4F]/40 hover:border-[#8C6D4F] text-[#BFA895] hover:text-[#EAD8C7] text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 text-center"
+                className="relative inline-flex items-center justify-center space-x-3 px-6 sm:px-7 py-3 sm:py-3.5 border border-[#D4AF37] bg-[#120F0C]/90 hover:border-[#F3E5AB] hover:bg-[#1a140d] text-[#D4AF37] hover:text-[#FFF5EB] text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 text-center shadow-[0_0_20px_rgba(212,175,55,0.25)] hover:shadow-[0_0_30px_rgba(212,175,55,0.45)]"
               >
+                <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/70 to-transparent pointer-events-none" />
                 <span>SCROLL TO EXPLORE</span>
-                <span className="transform transition-transform duration-300 group-hover:translate-y-0.5 text-xs">
+                <span className="transform transition-transform duration-300 group-hover:translate-y-0.5 text-xs text-[#D4AF37]">
                   ↓
                 </span>
               </motion.a>
