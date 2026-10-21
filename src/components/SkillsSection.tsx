@@ -31,8 +31,8 @@ const bentoCategories = [
     title: 'ALGORITHMS & STATISTICAL FOUNDATIONS',
     badge: 'MATHEMATICS & CORE',
     items: ['Python', 'C++', 'Java', 'Data Structures', 'Statistical Modeling', 'Probability'],
-    description: '1200+ algorithmic and data structure problems solved. Grounded in probability distributions, multivariate statistics, and optimization.',
-    stat: '1200+ SOLVED',
+    description: '700+ algorithmic and data structure problems solved. Grounded in probability distributions, multivariate statistics, and optimization.',
+    stat: '700+ SOLVED',
     colSpan: 'lg:col-span-7',
   },
 ];
