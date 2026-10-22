@@ -90,6 +90,12 @@ export const HeroSection: React.FC = () => {
 
       {/* ================= 2. CINEMATIC VIDEO LAYER ================= */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-black flex items-center justify-center md:justify-end">
+        {/* Ambient Backlight Glow highlighting the video subject */}
+        <div className="absolute right-0 md:right-1/12 top-1/2 -translate-y-1/2 w-[28rem] h-[28rem] md:w-[42rem] md:h-[42rem] bg-gradient-to-br from-[#D4AF37]/20 via-[#C99E5D]/10 to-transparent rounded-full blur-[130px] pointer-events-none" />
+        
+        {/* Radial Lens Highlight focusing on the subject */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(247,231,196,0.12),transparent_65%)] pointer-events-none mix-blend-screen" />
+
         <video
           ref={videoRef}
           autoPlay
@@ -97,23 +103,27 @@ export const HeroSection: React.FC = () => {
           loop
           playsInline
           preload="auto"
-          className="w-full h-full object-cover object-center opacity-65 sm:opacity-80 md:opacity-100 md:w-auto md:h-screen md:max-w-none md:object-contain md:origin-right md:scale-95 lg:scale-100 transition-opacity duration-700"
+          className="w-full h-full object-cover object-center opacity-85 sm:opacity-95 md:opacity-100 md:w-auto md:h-screen md:max-w-none md:object-contain md:origin-right md:scale-95 lg:scale-100 filter brightness-[1.14] contrast-[1.12] saturate-[1.15] drop-shadow-[0_0_35px_rgba(212,175,55,0.15)] transition-all duration-700"
         >
           <source src="/videos/hero.mp4" type="video/mp4" />
           <source src="/videos/hero_202608180949_202608181022.mp4" type="video/mp4" />
         </video>
 
-        {/* Mobile: Smooth vignette overlay so the centered subject is clearly visible while text is crisp */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/35 to-black/90 md:hidden pointer-events-none" />
+        {/* Mobile: Gentle vignette overlay ensuring clear subject while text remains crisp */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 md:hidden pointer-events-none" />
 
-        {/* Desktop: Seamless Soft Left Edge Blend */}
-        <div className="hidden md:block absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-black via-black/85 to-transparent pointer-events-none" />
+        {/* Desktop: Seamless Soft Left Edge Blend for Headline Legibility */}
+        <div className="hidden md:block absolute inset-y-0 left-0 w-[42%] lg:w-[38%] bg-gradient-to-r from-black via-black/75 to-transparent pointer-events-none" />
+
+        {/* Top/Bottom Cinematic Fade */}
+        <div className="absolute top-0 inset-x-0 h-20 bg-gradient-to-b from-black/60 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
 
         {/* ================= 3. ANIMATED WATERMARK EMBLEM (DESKTOP / TABLET ONLY) ================= */}
         <div className="hidden sm:flex absolute bottom-10 right-10 lg:bottom-16 lg:right-20 pointer-events-none items-center justify-center z-10">
           <div className="relative flex items-center justify-center">
-            <div className="absolute w-52 h-52 sm:w-60 sm:h-60 bg-black/95 rounded-full blur-2xl pointer-events-none" />
-            <div className="absolute w-36 h-36 sm:w-40 sm:h-40 bg-black rounded-full blur-md pointer-events-none" />
+            {/* Soft, non-destructive backdrop blur for watermark */}
+            <div className="absolute w-36 h-36 sm:w-44 sm:h-44 bg-black/40 rounded-full blur-xl pointer-events-none" />
 
             <motion.div
               animate={{
@@ -256,25 +266,26 @@ export const HeroSection: React.FC = () => {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
-                className="relative inline-flex items-center justify-center space-x-2 px-6 sm:px-7 py-3 sm:py-3.5 border border-[#8C6D4F] bg-[#120F0C]/90 hover:border-[#D4AF37] text-[#EAD8C7] hover:text-[#FFF5EB] text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_25px_rgba(212,175,55,0.18)] text-center"
+                className="group relative inline-flex items-center justify-center space-x-2.5 px-6 sm:px-7 py-3 sm:py-3.5 border border-[#8C6D4F] bg-[#120F0C]/90 hover:border-[#D4AF37] hover:bg-[#18130e] text-[#EAD8C7] hover:text-[#FFF5EB] text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.4)] text-center"
               >
-                <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#E8D7C5]/40 to-transparent pointer-events-none" />
+                <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#E8D7C5]/30 to-transparent pointer-events-none" />
                 <span>DOWNLOAD RESUME</span>
                 <span className="transform transition-transform duration-300 group-hover:translate-y-0.5 text-xs">
                   ↓
                 </span>
               </motion.a>
 
-              {/* Explore My Work CTA — NOW SECOND */}
+              {/* Scroll To Explore CTA — NOW SECOND */}
               <motion.a
                 href="#about"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
-                className="relative inline-flex items-center justify-center space-x-3 px-6 sm:px-7 py-3 sm:py-3.5 border border-[#B89658]/70 bg-[#120F0C]/80 hover:border-[#D4AF37] hover:bg-[#1a140d] text-[#D8C29D] hover:text-[#FFF5EB] text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 text-center"
+                className="group relative inline-flex items-center justify-center space-x-2.5 px-6 sm:px-7 py-3 sm:py-3.5 border border-[#8C6D4F] bg-[#120F0C]/90 hover:border-[#D4AF37] hover:bg-[#18130e] text-[#EAD8C7] hover:text-[#FFF5EB] text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.4)] text-center"
               >
+                <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#E8D7C5]/30 to-transparent pointer-events-none" />
                 <span>SCROLL TO EXPLORE</span>
-                <span className="transform transition-transform duration-300 group-hover:translate-y-0.5 text-xs text-[#D8C29D]">
+                <span className="transform transition-transform duration-300 group-hover:translate-y-0.5 text-xs">
                   ↓
                 </span>
               </motion.a>
